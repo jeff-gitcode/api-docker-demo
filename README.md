@@ -18,11 +18,11 @@ $ curl --get http://localhost:5130/weatherforecast
 # docker support
 $ dotnet add ./webapi package Microsoft.NET.Build.Containers
 
-# publish your project for linux-x64
+# publish your project for linux-x64 ？
 $ dotnet publish --os linux --arch x64 -c Release -p:PublishProfile=DefaultContainer
 $ docker image list
 
-# run your app using the new container
+# run your app using the new container ?
 $ docker run -it --rm -p 8080:8080 --name mycontainer webapi:latest
 
 # create image
@@ -38,4 +38,7 @@ $ docker rm webapi
 $ docker-compose up -d
 $ docker-compose stop
 
+# remove git change
+$ git rm -r "./webapi/bin/"
+$ git rm -r "./webapi/obj/"
 ```
