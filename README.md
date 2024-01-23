@@ -23,7 +23,19 @@ $ dotnet publish --os linux --arch x64 -c Release -p:PublishProfile=DefaultConta
 $ docker image list
 
 # run your app using the new container
-$ docker run -it --rm -p 8080:80 --name mycontainer webapi:latest
+$ docker run -it --rm -p 8080:8080 --name mycontainer webapi:latest
 
+# create image
+$ docker build -t webapi -f ./webApi/Dockerfile .
+$ docker image ls
+
+# create container
+$ docker run --name webapi -p 8082:8080 -d webapi:latest
 $ docker ps -a
+$ docker stop webapi
+$ docker rm webapi
+
+$ docker-compose up -d
+$ docker-compose stop
+
 ```

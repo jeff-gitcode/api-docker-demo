@@ -1,0 +1,10 @@
+
+### RegisterUserFunction(User)
+GET http://localhost:8083/weatherforecast HTTP/1.1
+accept: text/plain
+content-type: application/json
+
+### RegisterUserFunction(User) 770
+GET http://localhost:51584/weatherforecast HTTP/1.1
+accept: text/plain
+content-type: application/json
