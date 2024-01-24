@@ -1,3 +1,12 @@
+# Docker Kong Practice
+
+## Tech stack
+- [x] docker
+- [x] docker-compose
+- [x] kong
+- [x] kong manager
+![alt text](./doc/docker-kong-demo.gif)
+- [x] postgres db
 
 ```````````dotnetcli
 
