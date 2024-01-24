@@ -1,10 +1,17 @@
 
-### RegisterUserFunction(User)
+### demo api
 GET http://localhost:8088/weatherforecast HTTP/1.1
 accept: text/plain
 content-type: application/json
 
-### RegisterUserFunction(User) 770
-GET http://localhost:8000/mock/weatherforecast HTTP/1.1
+### add service
+POST http://localhost:8001/services/ HTTP/1.1
 accept: text/plain
 content-type: application/json
+
+
+
+### RegisterUserFunction(User) 770
+GET http://localhost:8000/petstore/pet/10 HTTP/1.1
+accept: text/plain
+# content-type: application/json

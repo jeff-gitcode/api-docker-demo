@@ -101,10 +101,10 @@ $ curl -Ls https://get.konghq.com/quickstart | bash
 http://localhost:8002/workspaces
 
 # Creating services
-$ curl -i -s -X POST http://localhost:8001/services --data name=example_service --data url="http://localhost:8088"
+$ curl -i -s -X POST http://localhost:8001/services --data name=pet-store --data url="https://petstore.swagger.io/v2"
 
 # view service
-$ url -X GET http://localhost:8001/services/example_service
+$ url -X GET http://localhost:8001/services/pet-store
 
 # listing service
 $ curl -X GET http://localhost:8001/services
@@ -112,14 +112,17 @@ $ curl -X GET http://localhost:8001/services
 http://localhost:8002/default/services
 
 # Creating routes
-$ curl -i -X POST http://localhost:8001/services/example_service/routes --data "paths[]=/mock" --data name=example_route
+$ curl -i -X POST http://localhost:8001/services/pet-store/routes --data "paths[]=/petstore" --data name=pet-store
 
 $ Viewing route configuration
-$ curl -X GET http://localhost:8001/services/example_service/routes/example_route
+$ curl -X GET http://localhost:8001/services/pet-store/routes
 
 http://localhost:8002/default/routes
 
-$ curl -X GET http://localhost:8000/mock/weatherforecast
+$ curl -X GET http://localhost:8000/petstore/pet/10
+
+
+//////////////////////////////
 
 # start db
 $ docker run -d --name kong-database --network=kong-comic-net -p 5432:5432 -e "POSTGRES_USER=kong" -e "POSTGRES_DB=kong"  -e "POSTGRES_PASSWORD=kong" postgres:9.6
